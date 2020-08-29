@@ -1,0 +1,10 @@
+.App {
+  text-align: center;
+}
+
+$theme-colors: (
+  "primary": #d900a3,
+  "danger": #db6313
+);
+
+@import "../node_modules/bootstrap/scss/bootstrap";
