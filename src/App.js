@@ -1,10 +1,22 @@
-import React, { useEffect } from 'react';
-import Button from 'react-bootstrap/Button';
-import { useSelector, useDispatch } from 'react-redux';
-import { isLogged } from './redux/actions';
+import React, { Component } from 'react';
+import Header from './components/Header';
+import Main from './components/Main';
+import Footer from './components/Footer';
+//import { useSelector, useDispatch } from 'react-redux';
 import './App.scss';
 
-function App() {
+class App extends Component {
+	render() {
+		return(
+			<div className ="App container pt-4">
+				<Header />
+				<Main />
+				<Footer />
+			</div>
+		);
+	};
+};
+/*function App() {
 	const user = useSelector((state) => state.auth.user);
 	const isLoading = useSelector((state) => state.auth.isLoading);
 	const dispatch = useDispatch();
@@ -27,11 +39,5 @@ function App() {
 		</div>
 	);
 }
-const Loading = ({ isLoading }) => {
-	return (
-		<>
-			{isLoading && <p>Cargando...</p>}
-		</>
-	);
-};
+*/
 export default App;
