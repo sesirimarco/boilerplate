@@ -1,0 +1,25 @@
+$theme-colors: (
+  "primary": #00ceab,
+  "danger": #d900a3,
+  "custom-color": #69ecc5
+);
+$btn-border-radius: 50px;
+$btn-border-radius-sm: $btn-border-radius;
+$btn-border-radius-lg: $btn-border-radius;
+$input-btn-padding-x: 0.9rem;
+$input-btn-padding-y: 0.1rem;
+$font-size-base: 0.9rem;
+$input-btn-border-width: 1px;
+$input-btn-focus-width: 0;
+
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/mixins";
+
+$headings-color: darken(theme-color("custom-color"), 30%);
+
+.btn:hover {
+  background-color: lighten(theme-color("custom-color"), 10%) !important;
+}
+
+@import "../node_modules/bootstrap/scss/bootstrap";

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
-import Landing from '../pages/Landing';
+import Landing from '../pages/Landing/Landing';
 import Signin from '../pages/Signin';
 import PrivateContent from '../pages/PrivateContent';
 import { isLogged} from '../redux/actions';
