@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { isLogged, signOut } from '../redux/actions'
-import { NavLink } from 'react-router-dom';
+import { isLogged, signOut } from '../actions'
+import { NavLink, Redirect } from 'react-router-dom';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
@@ -11,6 +11,7 @@ class Header extends Component {
 		this.state = {
 			isLoading: props.isloading,
 			user: props.user,
+			redirectTo: null
 		};
 	}
 	static getDerivedStateFromProps(props, state) {
@@ -27,6 +28,7 @@ class Header extends Component {
 	render() {
 		return (
 			<header>
+				{this.state.redirectTo && <Redirect to={this.state.redirectTo}></Redirect>}
 				<Navbar bg="light" expand="lg">
 					<NavLink to="/">
 						<h4>Brand</h4>
@@ -50,6 +52,7 @@ class Header extends Component {
 										className="nav-item nav-link"
 										onClick={() => {
 											this.props.signOut();
+											this.setState({redirectTo: '/'})
 										}}
 									>Logout</div>
 								</NavDropdown>
