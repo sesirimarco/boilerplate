@@ -21,5 +21,8 @@ $input-btn-padding-y-lg: 0.4rem;
 .bg-gray-600 {
   background-color: $gray-600;
 }
+.cursor-pointer {
+  cursor: pointer;
+}
 
 @import "../node_modules/bootstrap/scss/bootstrap";

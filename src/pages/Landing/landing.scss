@@ -1,11 +1,34 @@
 @import "../../../node_modules/bootstrap/scss/functions";
 @import "../../../node_modules/bootstrap/scss/variables";
 
-.avatar {
+.xy-center {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .avatar-container {
   width: 200px;
+}
+.carousel-item-content {
+  height: 300px;
+}
+.avatar-section {
+  height: 500px;
+}
+
+.h-200 {
+  height: 200px;
+}
+
+.anim {
+  animation-name: slidein;
+  position: relative;
+}
+@keyframes slidein {
+  from {
+    left: -500px;
+  }
+  to {
+    left: 0;
+  }
 }

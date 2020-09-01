@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ScrollAnimation from 'react-animate-on-scroll';
 import './landing.scss';
 
 class Hero extends Component {
@@ -8,13 +9,25 @@ class Hero extends Component {
         <div className="container">
           <div className="row">
             <div className="col-6">
-              <h1 className="text-white font-weight-bold">
-                This is the main title.
-                It could have more than one text line.
-              </h1>
-              <h2 className="text-white">
-                As you suppose, this is the sub-title.
-              </h2>
+              <ScrollAnimation
+                animateIn='anim'
+                delay={200}
+                duration={0.4}
+              >
+                <h1 className="text-white font-weight-bold">
+                  This is the main title.
+                  It could have more than one text line.
+                </h1>
+              </ScrollAnimation>
+              <ScrollAnimation
+                animateIn='anim'
+                delay={400}
+                duration={0.4}
+              >
+                <h2 className="text-white">
+                  As you suppose, this is the sub-title.
+                </h2>
+              </ScrollAnimation>
             </div>
             <div className="col-6 bg-gray-600 rounded p-5">
               <h3 className="text-white p-5">

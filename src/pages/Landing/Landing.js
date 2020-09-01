@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Header from './Header';
 import Hero from './Hero';
 import Avatar from './Avatar';
+import Carousel from './Carousel';
 import './landing.scss';
 
 class Landing extends Component {
@@ -12,7 +13,12 @@ class Landing extends Component {
           <Header />
           <Hero />
         </div>
-        <Avatar className="mb-5" />
+        <div className="avatar-section">
+          <Avatar />
+        </div>
+        <div className="mb-3">
+          <Carousel />
+        </div>
       </div>
 		);
 	}
