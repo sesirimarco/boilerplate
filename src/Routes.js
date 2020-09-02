@@ -11,10 +11,7 @@ import Signin from './pages/Signin';
 import './main.scss';
 
 class Routes extends Component {
-  componentDidMount() {
-    console.log(this.props)
-    this.props.isLogged();
-  };
+   
   render() {
     return(
       <main>
@@ -23,15 +20,15 @@ class Routes extends Component {
             (
               <>
                 <Header />
-                <Route exact path='/profile' component={PrivateContentTwo} />
+                <Route path='/profile' component={PrivateContentTwo} />
                 <Route exact path='/' component={PrivateContent} />
                 <Footer />
               </>
             ) : 
             (
               <>
-                <Route exact path='/' component={Landing} />
                 <Route path='/signin' component={Signin} />
+                <Route exact path='/' component={Landing} />
               </>
             )
           }
@@ -41,6 +38,6 @@ class Routes extends Component {
   };
 };
 export default connect(
-  ({auth:{user}}) => ({user}),
+  ({auth:{user, redirectTo}}) => ({user, redirectTo}),
   {isLogged}
 )(Routes);

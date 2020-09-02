@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { isLogged, signOut } from '../actions'
-import { NavLink, Redirect } from 'react-router-dom';
+import { NavLink, Redirect, withRouter } from 'react-router-dom';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
@@ -22,9 +22,6 @@ class Header extends Component {
     }
     return null;
   }
-	componentDidMount() {
-		this.props.isLogged();
-	}
 	render() {
 		return (
 			<header>
@@ -51,8 +48,7 @@ class Header extends Component {
 									<div 
 										className="nav-item nav-link"
 										onClick={() => {
-											this.props.signOut();
-											this.setState({redirectTo: '/'})
+											this.props.signOut(this.props.history);
 										}}
 									>Logout</div>
 								</NavDropdown>
@@ -77,4 +73,4 @@ class Header extends Component {
 export default connect(
 	({auth: {isLoading, user}}) => ({isLoading, user}),
   {isLogged, signOut}
-)(Header);
+)(withRouter(Header));

@@ -2,7 +2,7 @@ import {
 	IS_LOGGED, 
 	IS_SIGNING, 
 	SIGN_IN, 
-	SIGN_OUT 
+	SIGN_OUT,
 } from '../actions';
 
 const intialState = {
@@ -17,10 +17,8 @@ const reducer = (state = intialState, action) => {
 			return {
 				...state,
 				isLoading: false,
-				auth: {
-					user: action.payload,
-					isLogged: true,
-				},
+				user: action.payload,
+				isLogged: action.payload ? true : false,
 			};
 		case SIGN_OUT:
 			return {

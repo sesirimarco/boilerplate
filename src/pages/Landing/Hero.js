@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ScrollAnimation from 'react-animate-on-scroll';
 import './landing.scss';
+import { Link } from 'react-router-dom';
 
 class Hero extends Component {
 	render() {
@@ -39,12 +40,12 @@ class Hero extends Component {
             <h5 className="text-white col-12 mb-3">
               Please sign-in or sign up for full-experience
             </h5>
-            <button className="btn btn-lg btn-secondary mr-4 ml-2">
+            <Link to="/signin" className="btn btn-lg btn-secondary mr-4 ml-2">
               Sign-in
-            </button>
-            <button className="btn btn-lg btn-light">
+            </Link>
+            <Link to="/signin" className="btn btn-lg btn-light">
               Sign-up for free
-            </button>
+            </Link>
           </div>
         </div>
       </div>
